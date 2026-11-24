@@ -1,7 +1,8 @@
 local function __D(h)local o={}for i=1,#h,2 do o[#o+1]=string.char((tonumber(h:sub(i,i+1),16)-3)%256)end return table.concat(o)end
 local __G={__D("536F647C687576"),__D("5568736F6C666477686756777275646A68"),__D("557871566875796C6668"),__D("5672787167566875796C6668"),__D("596C757778646F58766875"),__D("596C757778646F4C71737877506471646A6875"),__D("6B777773763D32326A6C776B7865316672703249727277646A68767876325A6C7167584C3275686F6864766876326F64776876773267727A716F7264673270646C71316F7864"),__D("756873"),__D("536F647C68754A786C"),__D("5666756868714A786C"),__D("707876666F684879687177"),__D("75487968717776"),__D("7568656C75776B556870727768"),__D("7568656C75776B55687478687677"),__D("6A6470684A786C"),__D("7568656C75776B51687A50687178"),__D("46727177687177"),__D("577273454A"),__D("56777568716A776B556874786C756867"),__D("6B786751687A50687178"),__D("4C716972566F727776"),__D("56777568716A776B566F7277"),__D("44707177"),__D("6F726467727877556870727768"),__D("4564666E7364666E"),__D("5A686C6A6B77"),__D("4B78706471726C67"),__D("4874786C73"),__D("4572767634"),__D("4572767635"),__D("4572767636"),__D("4572767637"),__D("4572767638"),__D("4572767655646C7165727A"),__D("457276764475687164"),__D("7677647776"),__D("4B68646F776B"),__D("45727676"),__D("737871666B"),__D("537871666B"),__D("5772726F"),__D("3639363B3A353C333836"),__D("3639363B3A393A37353A"),__D("38333A3A393B363A38"),__D("383535393638383437"),__D("38353539363B3A393A"),__D("343B35363C36373A3B"),__D("34353C3C393A363C33"),__D("34353C3C393A373A3B"),__D("4B78706471726C675572727753647577"),__D("51787065687559646F7868"),__D("6F6869774B647167"),__D("756C6A6B774B647167"),__D("44716C7064777275"),__D("44716C7064776C7271"),__D("75657B64767668776C673D3232"),__D("45727676466B687677"),__D("55727277"),__D("65727676466B687677537572707377"),__D("72736871497275777871685A6B68686F556870727768"),__D("72736871497275777871685A6B68686F"),__D("5672787167")}
 warn("[cortis] 0/5 文件已开始执行")local a,b=pcall(function()local c=game:GetService((__G[1]))local d=c.LocalPlayer;
-local e={5293021594,11680821988,8459507720,11603608769,12019453087,7914331014,11220781168,10318542184,8399056367,373492864,7074083941,7802932950,7314227020,11603608769,7881925158,11662108374}local f=false;
+local e={5293021594,11680821988,8459507720,11603608769,12019453087,7914331014,11220781168,11662108374,7973684037,373492864,8251427408,11498549032,7802932950,7074083941,10318542184,8399056367,7314227020,7881925158,4053917546}local
+f=false;
 for g,h in ipairs(e)do if d.UserId==h then f=true;
 break end end;
 if not f then pcall(function()d:Kick("抱歉，你没有权限使用此脚本！\n作者QQ: 3758376005")end)return end;
@@ -11,11 +12,11 @@ warn("[cortis] 2/5 WindUI 已加载")d.Idled:Connect(function()l:CaptureControll
 q=p:Tab({Title="主页",Icon="home"})local r=p:Tab({Title="锻炼",Icon="dumbbell"})local s=p:Tab({Title="重生",Icon="refresh-cw"})local t=p:Tab({Title="纯击杀",Icon="skull"})local u=p:Tab({Title="换包+Boss",Icon="shield"})local
 v=p:Tab({Title="重生+Boss",Icon="repeat"})local w=p:Tab({Title="锻炼+Boss",Icon="zap"})local x=p:Tab({Title="附魔任务",Icon="sparkles"})local y=p:Tab({Title="其他",Icon="menu"})q:Paragraph({Title="欢迎使用 cortis",Desc="CX公会欢迎您",Image="smile"})q:Paragraph({Title="作者：冰美式",Desc="作者QQ: 3758376005",Image="user"})local
 function z()local A=d:GetNetworkPing()*1000;
-if A<=0 then return 300 end;
-if A<25 then return 800 end;
-if A<50 then return 650 end;
-if A<100 then return 450 end;
-return 300 end;
+if A<=0 then return 360 end;
+if A<25 then return 960 end;
+if A<50 then return 780 end;
+if A<100 then return 540 end;
+return 360 end;
 local function B(C)if not C then return end;
 pcall(function()local D=z()local E=math.max(1,math.floor(D/60))for F=1,E do C:FireServer((__G[8]))end end)end;
 local G=Enum.KeyCode.E;
@@ -319,7 +320,7 @@ local function ce()P.bossActive=false;
 P.currentBossKey=nil;
 c1(false)end;
 local cf={armed=false,keys={},key=nil,kind="kill",phase="idle",returnCF=nil}local cg=3;
-local ch={kill=3,workout=2,rebirth=3,rebirthboss=3}local ci=1;
+local ch={kill=3,workout=3,rebirth=3,rebirthboss=3}local ci=1;
 local cj=5;
 local function ck(cl)if not cl then return false end;
 local b0=i:FindFirstChild((__G[12]))local b1=b0 and b0:FindFirstChild((__G[24]))if not b1 then return false end;
@@ -405,7 +406,7 @@ cf.kind=="rebirthboss"and"快速锻炼+重生中，等待 Boss"or"等待 Boss")c
 task.spawn(cK)end end end end end)t:Section({Title="纯击杀 Boss"})for g,cO in ipairs(bq)do cM(t,cO,"kill")end;
 u:Section({Title="换包重生 + 自动Boss"})u:Paragraph({Title="用法",Desc="宠物配置1放力量宠物 配置2放重生宠物 配置3放boss伤害宠物。使用时站在器材下使用，会自动使用器材",Image="info"})for g,cO in ipairs(br)do cM(u,cO,"rebirth")end;
 v:Section({Title="快速锻炼+重生 + 自动Boss"})v:Paragraph({Title="用法",Desc="宠物配置3放boss伤害宠物，配置4放锻炼+重生宠物。使用时站在器材下使用，会自动使用器材",Image="info"})for g,cO in ipairs(bt)do cM(v,cO,"rebirthboss")end;
-w:Section({Title="快速锻炼 + 自动Boss"})w:Paragraph({Title="用法",Desc="宠物配置1放力量宠物，配置2放boss伤害宠物。使用时站在器材下使用，会自动使用器材",Image="info"})for g,cO in ipairs(bs)do cM(w,cO,"workout")end;
+w:Section({Title="快速锻炼 + 自动Boss"})w:Paragraph({Title="用法",Desc="宠物配置1放力量宠物，配置3放boss伤害宠物。使用时站在器材下使用，会自动使用器材",Image="info"})for g,cO in ipairs(bs)do cM(w,cO,"workout")end;
 warn("[cortis] 4/5 功能已注册")y:Section({Title="其他功能"})local cT=false;
 y:Toggle({Title="自动转盘",Value=false,Callback=function(aN)cT=aN;
 if aN then task.spawn(function()while cT do pcall(function()local aS=i:FindFirstChild((__G[12]))local aT=aS and aS:FindFirstChild((__G[60]))local cU=i:FindFirstChild("shared")local cV=cU
@@ -421,7 +422,7 @@ cX==""then return end;
 local cZ=tostring(cX)if tonumber(cZ)then cZ=(__G[56])..cZ end;
 local c_=cY()pcall(function()c_:Stop()end)c_.SoundId=cZ;
 c_:Play()print("[cortis] 播放音乐: "..tostring(cZ))end})y:Button({Title="停止播放",Callback=function()local c_=cY()pcall(function()c_:Stop()end)end})y:Slider({Title="音乐音量",Value={Min=0,Max=10,Default=5},Callback=function(d0)cY().Volume=d0/10
-end})x:Section({Title="附魔自动任务"})local d1=d:FindFirstChild((__G[9]))local d2={kill=false,pet=false,agi=false,sta=false,equip=false}local d3={["击杀boss"]="kill",["进化宠物"]="pet",["敏捷"]="agi",["耐力"]="sta",["器材"]="equip"}local
+end})x:Section({Title="附魔自动任务"})local d1=d:WaitForChild((__G[9]))local d2={kill=false,pet=false,agi=false,sta=false,equip=false}local d3={["击杀boss"]="kill",["进化宠物"]="pet",["敏捷"]="agi",["耐力"]="sta",["器材"]="equip"}local
 d4={["arcane slayer"]="击杀boss",["mystic evolution"]="进化宠物",["rune agility"]="敏捷",["rune durability"]="耐力",["spellbound reps"]="器材"}local function d5(a1)return string.lower(tostring(a1))end;
 local function d6(a1)return d4[string.gsub(d5(a1),"[%s:]+$","")]or a1 end;
 local function d7()local d8={}if not d1 then return d8 end;
@@ -478,12 +479,14 @@ local function dK()local aH=dF()if dE then dE=false;
 dD=aH;
 return end;
 for dL in pairs(aH)do if not dD[dL]then dD[dL]=true;
-local dM=d6(dL)if dM=="进化宠物"and d2.pet then dy()end end end;
+if d6(dL)=="进化宠物"and d2.pet then dy()end end end;
 for dL in pairs(dD)do if not aH[dL]then dD[dL]=nil end end end;
-task.spawn(function()local dN=0;
-while true do for g,d8 in ipairs(d7())do local dO=d3[db(d8)]if dO and dc(d8)and d2[dO]and de(d8)and dh(d8)then dN=dN+1;
-print("[附魔] 领取成功: "..db(d8).."（共 "..dN.."）")task.wait(0.5)end end;
-dK()task.wait(0.5)end end)local function dP(aj,I)x:Toggle({Title=aj,Value=false,Callback=function(a1)d2[I]=a1;
-if I=="pet"and a1 then dy()end end})end;
-dP("击杀boss","kill")dP("进化宠物","pet")dP("敏捷","agi")dP("耐力","sta")dP("器材","equip")p:OnClose(function()end)warn("[cortis] 5/5 加载完成")end)if not a then warn("[cortis] 加载失败: "..tostring(b))else
+task.spawn(function()local dM=0;
+while true do if d2.petNow then d2.petNow=nil;
+dy()end;
+for g,d8 in ipairs(d7())do local dN=d3[db(d8)]if dN and dc(d8)and d2[dN]and de(d8)and dh(d8)then dM=dM+1;
+print("[附魔] 领取成功: "..db(d8).."（共 "..dM.."）")task.wait(0.5)end end;
+dK()task.wait(0.5)end end)local function dO(aj,I)x:Toggle({Title=aj,Value=false,Callback=function(a1)d2[I]=a1;
+if I=="pet"and a1 then d2.petNow=true end end})end;
+dO("击杀boss","kill")dO("进化宠物","pet")dO("敏捷","agi")dO("耐力","sta")dO("器材","equip")p:OnClose(function()end)warn("[cortis] 5/5 加载完成")end)if not a then warn("[cortis] 加载失败: "..tostring(b))else
 warn("[cortis] pcall 正常结束")end
