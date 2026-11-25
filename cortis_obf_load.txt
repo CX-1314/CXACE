@@ -1,5 +1,0 @@
--- 分卷加载器：先上传 part1/part2，再运行这个
-local base = "https://raw.githubusercontent.com/CX-1314/CXACE/refs/heads/main/"
-local a = game:HttpGet(base .. "cortis_obf_part1.txt")
-local b = game:HttpGet(base .. "cortis_obf_part2.txt")
-loadstring(a .. b)()
